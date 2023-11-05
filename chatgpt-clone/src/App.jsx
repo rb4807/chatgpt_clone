@@ -5,23 +5,10 @@ import ChatApp from './ChatApp';
 
 const App = () => {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggleNavbar = () => {
     setIsOpen(!isOpen);
-
  };
- const [messages, setMessages] = useState([]);
-  const [inputMessage, setInputMessage] = useState('');
 
-  const sendMessage = () => {
-    if (inputMessage.trim() === '') return;
-
-    setMessages([...messages, { text: inputMessage, isUser: true }]);
-    setInputMessage('');
-
-    // You can send the user's message to ChatGPT here and handle the response
-    // Add the response message to the state
-  };
     return (
         <>
 
@@ -217,7 +204,7 @@ const App = () => {
                     </div>
                     <ChatApp />
 
-                    
+            
                     <div className='relative'>
                         <h1 className='text-title text-center mt-2 md:mt-0 md:text-xs md:p-1'>ChatGPT can make mistakes. Consider checking important information.</h1>
                         <h1 className='text-title text-center md:text-xs md:p-1'>Cloned By <a className='underline underline-offset-1 font-bold' href='https://rajeshb.tech/'>RAJESH</a></h1>
