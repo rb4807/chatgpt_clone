@@ -26,7 +26,6 @@ const App = () => {
         <>
 
         {/* Mobile some nav */}
-<div className='bg-[rgb(52,53,65)]'>
             <div className="bg-[#202123] flex flex-row md:hidden">
                 <button onClick={toggleNavbar}>
                     {isOpen ? 
@@ -229,7 +228,6 @@ const App = () => {
                         </a>
                     </div>
                 </div>
-            </div>
             </div>
         </>  
     );
