@@ -1,20 +1,96 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Item from './Item';
 import r from './assets/r.jpeg'
+import ChatApp from './ChatApp';
 
 const App = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+
+ };
+ const [messages, setMessages] = useState([]);
+  const [inputMessage, setInputMessage] = useState('');
+
+  const sendMessage = () => {
+    if (inputMessage.trim() === '') return;
+
+    setMessages([...messages, { text: inputMessage, isUser: true }]);
+    setInputMessage('');
+
+    // You can send the user's message to ChatGPT here and handle the response
+    // Add the response message to the state
+  };
     return (
         <>
-            <div className="bg-[#202123] p-2 flex flex-row md:hidden">
-                <svg width="24" height="24" stroke="#ffffff" viewBox="0 0 24 24" fill="#fffff" stroke-width="2" xmlns="http://www.w3.org/2000/svg" className="icon-md">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 8C3 7.44772 3.44772 7 4 7H20C20.5523 7 21 7.44772 21 8C21 8.55228 20.5523 9 20 9H4C3.44772 9 3 8.55228 3 8ZM3 16C3 15.4477 3.44772 15 4 15H14C14.5523 15 15 15.4477 15 16C15 16.5523 14.5523 17 14 17H4C3.44772 17 3 16.5523 3 16Z" fill="currentColor"/>
-                </svg>
-                <h1 className='text-white ml-[35%]'>New Chat</h1>
-                <svg className='ml-[35%] mt-[1.3%] inline-block icon-sm shrink-0' stroke="#ffffff" fill="#fffff" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+        {/* Mobile some nav */}
+<div className='bg-[rgb(52,53,65)]'>
+            <div className="bg-[#202123] flex flex-row md:hidden">
+                <button onClick={toggleNavbar}>
+                    {isOpen ? 
+                    <svg xmlns="http://www.w3.org/2000/svg" className="mt-2 ml-2 icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg> : 
+                    <svg width="24" height="24" className="icon-md ml-2 mt-2" stroke="#ffffff" viewBox="0 0 24 24" fill="#fffff" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 8C3 7.44772 3.44772 7 4 7H20C20.5523 7 21 7.44772 21 8C21 8.55228 20.5523 9 20 9H4C3.44772 9 3 8.55228 3 8ZM3 16C3 15.4477 3.44772 15 4 15H14C14.5523 15 15 15.4477 15 16C15 16.5523 14.5523 17 14 17H4C3.44772 17 3 16.5523 3 16Z" fill="currentColor"/>
+                    </svg>}
+                </button>
+                <h1 className='text-white mt-2 ml-[35%]'>New Chat</h1>
+                <svg className='ml-[35%] mt-4 inline-block icon-sm shrink-0' stroke="#ffffff" fill="#fffff" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <line x1="12" y1="5" x2="12" y2="19"/>
                     <line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
             </div>
+        
+        {/* hamburger view */}
+
+            <div className="bg-[#202123] flex flex-row text-white justify-center p-2 md:hidden">
+                <div className={`lg:flex ${isOpen ? '' : 'hidden'}`}>
+                    <div className="flex flex-row gap-2 p-2">
+                        <div>
+                            <h3 className="border border-grey rounded-md py-2 px-12">
+                                <svg className='items-center inline-block icon-sm shrink-0' stroke="#ffffff" fill="#fffff" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="12" y1="5" x2="12" y2="19"/>
+                                    <line x1="5" y1="12" x2="19" y2="12"/>
+                                </svg> 
+                                New Chat
+                            </h3>
+                        </div>
+                        <div className="border border-grey rounded-md py-2 px-4">
+                            <svg stroke="#ffffff" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/>
+                            </svg>
+                        </div>
+                    </div> 
+                    <h1 className='text-gray md:p-2 md:ml-2 md:text-xs'>Today</h1>
+                    <Item/>
+                    <h1 className='text-gray md:p-2 md:ml-2 md:text-xs'>Yesterday</h1>
+                    <Item/>
+                    <hr className="border border-grey md:mt-[20%]" />
+                    <ul className='hover:bg-grays md:p-4 md:mt-2 md:hover:rounded-lg md:hover:p-4'>
+                        <li className='p-1'>   
+                            <a href=''><svg xmlns="http://www.w3.org/2000/svg" className="inline-block icon-sm shrink-0 ml-4 mr-2" width="18" height="18" stroke="#ffffff" fill="#fffff" viewBox="0 0 16 16">
+                                <path d="m5.854 5.735.692-2.074a.479.479 0 0 1 .908 0l.692 2.074a3.35 3.35 0 0 0 2.119 2.12l2.074.69a.479.479 0 0 1 0 .91l-2.074.69a3.35 3.35 0 0 0-2.12 2.12l-.691 2.074a.479.479 0 0 1-.908 0l-.692-2.074a3.35 3.35 0 0 0-2.119-2.12l-2.074-.69a.479.479 0 0 1 0-.91l2.074-.69a3.35 3.35 0 0 0 2.12-2.12ZM11.46 2.464l.326-.977a.225.225 0 0 1 .428 0l.325.977c.157.47.527.84.997.997l.977.325a.225.225 0 0 1 0 .428l-.977.325c-.47.157-.84.527-.997.997l-.325.977a.225.225 0 0 1-.428 0l-.325-.977a1.577 1.577 0 0 0-.998-.997l-.976-.325a.225.225 0 0 1 0-.428l.976-.325c.471-.157.84-.527.998-.997Z" fill="currentColor"/>
+                            </svg></a> Upgrade plan
+                        </li> 
+                    </ul>
+                    <div className='flex flex-row items-center md:gap-2'>             
+                        <img src={r} className='w-8 ml-4 mt-2'/>
+                        <h1 className='ml-4'>Rajesh</h1>
+                        <svg stroke="#8e8ea0" className="icon-sm gizmo:hidden mt-[1.5%] ml-[40%]" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="1"/>
+                            <circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
+                        </svg>
+                    </div> 
+                </div> 
+            </div>
+
+        {/* Sidebar */}
+
             <div className="md:flex md:h-screen">
                 <div className="bg-[#202123] hidden md:block md:flex md:flex-col text-white md:w-1/5">
                     <div className="flex flex-row md:gap-2 md:p-2">
@@ -54,7 +130,10 @@ const App = () => {
                         </svg>
                     </div>
                 </div>
-                <div className="md:w-4/5 p-4 bg-[rgb(52,53,65)] text-black">
+
+                {/* Main content */}
+
+                <div className="md:w-4/5 w-full p-4 bg-[rgb(52,53,65)] text-black">
                     <div className="bg-[#202123] rounded-md w-[100%] py-[1.5%] px-[1%] md:w-[28%] md:mt-[1%] md:ml-[35%] md:py-[0.4%] md:px-[0.5%]">
                         <div className="flex flex-row">
                             <h3 className='bg-[#40414f] border border-para rounded-md text-white px-[15%] py-[1.5%] md:px-8 md:py-[2.5%]'>
@@ -73,7 +152,7 @@ const App = () => {
                         </div>                
                     </div>
                     <h1 className='text-head text-center font-bold text-4xl p-[10%] mt-[42%] md:mt-0 md:text-4xl md:p-[9%]'>ChatGPT</h1>
-                    <div className="relative mt-[60%] md:mt-[13%] md:ml-[15%]">
+                    <div className="relative mt-[60%] md:mt-[10%] md:ml-[15%]">
                         <div className="w-full md:w-[40%]">
                             <div className="flex border border-para rounded-lg md:flex-row">
                                 <div className="md:col-span-1">
@@ -92,12 +171,12 @@ const App = () => {
                         <div className="w-full mt-2 md:mt-0 md:w-[40%] md:absolute md:top-0 md:left-[41%]">
                             <div className="flex border border-para rounded-lg md:flex-row">
                                 <div className="md:col-span-1">
-                                    <h1 className='text-title font-bold mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>Make up a story</h1>
-                                    <p className='text-para mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>about Sharky, a tooth-brushing shark superhero</p>
+                                    <h1 className='text-title font-bold mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>Compare design principles</h1>
+                                    <p className='text-para mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>for mobile apps and desktop software</p>
                                 </div>
                                 <div>
                                     <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[-90%] mt-9 md:ml-6 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[-90%] mt-9 md:ml-20 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
                                             <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
                                         </svg>
                                     </a>                                    
@@ -109,12 +188,12 @@ const App = () => {
                         <div className="w-full md:w-[40%]">
                             <div className="flex border border-para rounded-lg md:flex-row ">
                                 <div className="md:col-span-1">
-                                    <h1 className='text-title font-bold md:p-1 md:text-sm'>Make up a story</h1>
-                                    <p className='text-para md:text-sm md:p-1'>about Sharky, a tooth-brushing shark superhero</p>
+                                    <h1 className='text-title font-bold md:p-1 md:text-sm'>Make a content strategy</h1>
+                                    <p className='text-para md:text-sm md:p-1'>for a newsletter featuring free weekend events</p>
                                 </div>
                                 <div>
                                     <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm md:ml-6 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm md:ml-8 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
                                             <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
                                         </svg>
                                     </a>                                    
@@ -124,12 +203,12 @@ const App = () => {
                         <div className="w-full hidden md:block md:w-[40%] md:absolute md:top-0 md:left-[41%]">
                             <div className="flex border border-para rounded-lg md:flex-row">
                                 <div className="md:col-span-1">
-                                    <h1 className='text-title font-bold md:p-1 md:text-sm'>Make up a story</h1>
-                                    <p className='text-para md:p-1 md:text-sm'>about Sharky, a tooth-brushing shark superhero</p>
+                                    <h1 className='text-title font-bold md:p-1 md:text-sm'>Give me ideas</h1>
+                                    <p className='text-para md:p-1 md:text-sm'>about how to plan my New Years resolutions</p>
                                 </div>
                                 <div>
                                     <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm md:ml-6 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm md:ml-10 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
                                             <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
                                         </svg>
                                     </a>                                    
@@ -137,17 +216,9 @@ const App = () => {
                             </div>
                         </div>
                     </div>
+                    <ChatApp />
+
                     
-                    <div className="flex items-center justify-center mt-3">
-                        <div className="mx-auto w-full bg-[#40414f] flex flex-row rounded-lg shadow-lg p-3 md:p-2 md:mx-[15%]">
-                            <input type="text" placeholder="Send a message" className="w-full bg-[#40414f] outline-none placeholder-gray-500"/>
-                            <button  className=" text-white rounded-full focus:outline-none focus:ring focus:ring-blue-300 md:ml-2 md:p-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm inline-block md:ml-6" viewBox="0 0 16 16" fill="none" width="16" height="16">
-                                    <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
-                                </svg>
-                            </button>
-                        </div>        
-                    </div>
                     <div className='relative'>
                         <h1 className='text-title text-center mt-2 md:mt-0 md:text-xs md:p-1'>ChatGPT can make mistakes. Consider checking important information.</h1>
                         <h1 className='text-title text-center md:text-xs md:p-1'>Cloned By <a className='underline underline-offset-1 font-bold' href='https://rajeshb.tech/'>RAJESH</a></h1>
@@ -159,7 +230,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
-            
+            </div>
         </>  
     );
     
