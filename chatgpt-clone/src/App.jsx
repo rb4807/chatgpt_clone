@@ -147,7 +147,7 @@ const App = () => {
                                 </div>
                                 <div>
                                     <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[-90%] mt-9 md:ml-6 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[-90%] mt-9 md:ml-5 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
                                             <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
                                         </svg>
                                     </a>                                    
@@ -158,11 +158,11 @@ const App = () => {
                             <div className="flex border border-para rounded-lg md:flex-row">
                                 <div className="md:col-span-1">
                                     <h1 className='text-title font-bold mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>Make a content strategy</h1>
-                                    <p className='text-para mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>for a newsletter featuring free weekend events</p>
+                                    <p className='text-para mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>for a newsletter weekend events</p>
                                 </div>
                                 <div>
                                     <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[-80%] mt-9 md:ml-20 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[-80%] mt-9 md:ml-28 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
                                             <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
                                         </svg>
                                     </a>                                    
@@ -179,7 +179,7 @@ const App = () => {
                                 </div>
                                 <div>
                                     <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm md:ml-8 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm md:ml-20 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
                                             <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
                                         </svg>
                                     </a>                                    
