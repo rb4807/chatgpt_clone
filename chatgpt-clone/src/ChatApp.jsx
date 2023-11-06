@@ -6,7 +6,8 @@ function ChatApp() {
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const [isTyping, setIsTyping] = useState(false);
-    const defaultResponse = "Hello I'm just Cloned ChatGPT, Developed by Rajesh. Thank You";
+    const defaultResponse = "Hello I'm just Cloned ChatGPT, Developed by Rajesh. Thank You ";
+    
 
     useEffect(() => {
         if (isTyping) {
@@ -24,13 +25,14 @@ function ChatApp() {
 
     const sendMessage = () => {
         if (inputMessage.trim() === '') return;
+        setIsTyping(true); 
         setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: inputMessage, isUser: true },
+            ...prevMessages,
+            { text: inputMessage, isUser: true },
         ]);
         setInputMessage('');
-        setIsTyping(true);
     };
+    
 
     return (
         <div className="flex flex-col justify-end bg-[rgb(52,53,65)] w-full p-4">
