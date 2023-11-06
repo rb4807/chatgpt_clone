@@ -157,8 +157,8 @@ const App = () => {
                         <div className="w-full mt-2 md:mt-0 md:w-[40%] md:absolute md:top-0 md:left-[41%]">
                             <div className="flex border border-para rounded-lg md:flex-row">
                                 <div className="md:col-span-1">
-                                    <h1 className='text-title font-bold mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>Compare design principles</h1>
-                                    <p className='text-para mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>for mobile apps and desktop software</p>
+                                    <h1 className='text-title font-bold mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>Make a content strategy</h1>
+                                    <p className='text-para mt-2 ml-2 md:mt-0 md:ml-0 md:p-1 md:text-sm'>for a newsletter featuring free weekend events</p>
                                 </div>
                                 <div>
                                     <a href="">
@@ -174,8 +174,8 @@ const App = () => {
                         <div className="w-full md:w-[40%]">
                             <div className="flex border border-para rounded-lg md:flex-row ">
                                 <div className="md:col-span-1">
-                                    <h1 className='text-title font-bold md:p-1 md:text-sm'>Make a content strategy</h1>
-                                    <p className='text-para md:text-sm md:p-1'>for a newsletter featuring free weekend events</p>
+                                    <h1 className='text-title font-bold md:p-1 md:text-sm'>Compare design principles</h1>
+                                    <p className='text-para md:text-sm md:p-1'> for mobile apps and desktop software</p>
                                 </div>
                                 <div>
                                     <a href="">
