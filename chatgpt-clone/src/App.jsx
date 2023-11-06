@@ -26,7 +26,7 @@ const App = () => {
                     </svg>}
                 </button>
                 <h1 className='text-white mt-2 ml-[35%]'>New Chat</h1>
-                <svg className='ml-[32%] mt-4 inline-block icon-sm shrink-0' stroke="#ffffff" fill="#fffff" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <svg className='ml-[32%] mt-3 inline-block icon-sm shrink-0' stroke="#ffffff" fill="#fffff" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <line x1="12" y1="5" x2="12" y2="19"/>
                     <line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
