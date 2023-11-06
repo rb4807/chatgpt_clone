@@ -25,7 +25,7 @@ const App = () => {
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M3 8C3 7.44772 3.44772 7 4 7H20C20.5523 7 21 7.44772 21 8C21 8.55228 20.5523 9 20 9H4C3.44772 9 3 8.55228 3 8ZM3 16C3 15.4477 3.44772 15 4 15H14C14.5523 15 15 15.4477 15 16C15 16.5523 14.5523 17 14 17H4C3.44772 17 3 16.5523 3 16Z" fill="currentColor"/>
                     </svg>}
                 </button>
-                <h1 className='text-white mt-2 ml-[28%]'>New Chat</h1>
+                <h1 className='text-white mt-2 ml-[30%]'>New Chat</h1>
                 <svg className='ml-[33%] mt-3 inline-block icon-sm shrink-0' stroke="#ffffff" fill="#fffff" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <line x1="12" y1="5" x2="12" y2="19"/>
                     <line x1="5" y1="12" x2="19" y2="12"/>
@@ -162,7 +162,7 @@ const App = () => {
                                 </div>
                                 <div>
                                     <a href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[25%] mt-9 md:ml-28 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon-sm ml-[55%] mt-9 md:ml-28 md:mt-5" viewBox="0 0 16 16" fill="none" width="16" height="16">
                                             <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="#c5c5d2"/>
                                         </svg>
                                     </a>                                    
